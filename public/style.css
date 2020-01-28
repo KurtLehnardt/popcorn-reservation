@@ -3,7 +3,8 @@
 }
 
 body{
-  background:#fff;
+  background: url('https://amyshealthybaking.com/wp-content/uploads/2018/03/stovetop-air-popped-popcorn-1618.jpg');
+  background-size: cover;
   color:#485e74;
   line-height:1.6;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
