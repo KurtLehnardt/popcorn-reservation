@@ -90,13 +90,28 @@ ul{
   transition: background-color 2s ease-out;
 }
 
-.alert{
+#alertMessage{
   text-align: center;
   padding:10px;
+  margin-bottom:10px;
+}
+
+.alert{
   background:#79c879;
   color:#fff;
-  margin-bottom:10px;
   display:none;
+}
+
+.usernameAlreadyInUse {
+  display: none;
+  background: #FF0000;
+  color: black;
+}
+
+.reservationCompleted {
+  display: none;
+  background: #79c879;
+  color: white;
 }
 
 /* LARGE SCREENS */
