@@ -12,7 +12,7 @@ firebase.initializeApp(firebaseConfig)
 const messagesRef = firebase.database().ref('registrations')
 
 const form = document.querySelector('#contactForm')
-const alertMsg = document.querySelector('.alert')
+const alertMsg = document.querySelector('#alertMessage')
 
 let dbKeysArray = []
 let previouslyRegisteredArr = []
@@ -44,14 +44,14 @@ const submitForm = e => {
   const email = getInputVal('email')
 
   if (!checkForPriorRegistrations(username, email)) {
-    alertMsg.style.display = 'block'
+    updateAlertMessage('success')
+    showAndHideAlertMessage()
     saveMessageToDB(name, username, email)
   } else {
+    userAlreadyExists = false
+    showAndHideAlertMessage()
     form.reset()
-    return
   }
-  // doesn't allow multiple registrations without refresh
-  form.style.display = 'none'
 }
 form.addEventListener('submit', submitForm)
 
@@ -70,12 +70,25 @@ const checkForPriorRegistrations = (username, email) => {
 const checkIfValueExists = (arr, value) => arr.includes(value)
 
 const updateAlertMessage = value => {
+  if (value === 'success'){
+    alertMsg.className = 'reservationCompleted'
+    alertMsg.innerHTML = 'Your reservation request has been sent'
+    return
+  }
+  alertMsg.className = 'usernameAlreadyInUse'
   alertMsg.innerHTML = `${value} is already in use.`
-  alertMsg.style.display = 'block'
-  alertMsg.style.background = 'red'
-  form.reset()
+  showAndHideAlertMessage()
   userAlreadyExists = true
 }
+
+const showAndHideAlertMessage = () => {
+    showAlertMessage()
+    setTimeout(hideAlertMessage, 3000)
+}
+
+const showAlertMessage = () => alertMsg.style.display = 'block'
+const hideAlertMessage = () => alertMsg.style.display = 'none'
+
 
 const saveMessageToDB = (name, username, email) => {
   const newMessageRef = messagesRef.push()
