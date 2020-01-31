@@ -39,9 +39,9 @@ populateListOfPreviousRegistrations()
 const submitForm = e => {
   e.preventDefault()
 
-  const name = getInputVal('name')
-  const username = getInputVal('username')
-  const email = getInputVal('email')
+  const name = getInputVal('name').trim()
+  const username = getInputVal('username').trim()
+  const email = getInputVal('email').trim()
 
   if (!checkForPriorRegistrations(username, email)) {
     updateAlertMessage('success')
