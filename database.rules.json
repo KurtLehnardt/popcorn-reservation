@@ -3,6 +3,6 @@
   "rules": {
     ".read": true,
     ".write": true,
-    ".validate": "newData.isString() && newData.val().matches(/[a-zA-Z0-9]/g)"
+    ".validate": "newData.isString() && newData.val().matches(/[a-zA-Z0-9]/)"
   }
 }
