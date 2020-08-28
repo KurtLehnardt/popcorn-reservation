@@ -1,3 +1,11 @@
-# popcorn-reservation
+# Share authentically.
 
-This is a simple registration form built with firebase for a friend's startup.
+Discover people who uplift and inspire you.
+
+Meditate.
+
+Man - tool Tra - thinking Dala - master, holy
+
+Mantra - thinking tool
+
+Mandala - tool for mastery, took for holiness
