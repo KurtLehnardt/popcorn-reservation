@@ -1,12 +1,12 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyD-WQZY0zjJyepEGoZfzGyOUG-gRrQKuhE",
-  authDomain: "popcorn-reservation.firebaseapp.com",
-  databaseURL: "https://popcorn-reservation.firebaseio.com",
+  apiKey: process.env.FB_API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  databaseURL: process.env.DB_URL,
   projectId: "popcorn-reservation",
   storageBucket: "popcorn-reservation.appspot.com",
-  messagingSenderId: "553121852864",
-  appId: "1:553121852864:web:6d7a4f5a1adff53288ec25",
-  measurementId: "G-CSM3041QGB"
+  messagingSenderId: process.env.MSG_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 }
 firebase.initializeApp(firebaseConfig)
 const messagesRef = firebase.database().ref('registrations')
